@@ -88,6 +88,20 @@ public class MileageCalculatorNoConversionRadio extends Application {
         rbMPG.setOnAction(e -> changeLabels());
         rbKPL.setOnAction(e -> changeLabels());
         
+        tfDistance.setOnKeyPressed(e -> {
+        	switch(e.getCode()) {
+        	case ENTER:
+        		calcMileage();
+        	}
+        });
+        
+        tfCapacity.setOnKeyPressed(e -> {
+        	switch(e.getCode()) {
+        	case ENTER:
+        		calcMileage();
+        	}
+        });
+        
         // create a scene and place it in the stage
         Scene scene = new Scene(mainPane); 
         
