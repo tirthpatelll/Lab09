@@ -6,7 +6,7 @@
  * Last Modified: Mar 25, 2024
  * Description:  
  */
-package ch16;
+package PAssign07;
 
 import javafx.application.Application;
 import javafx.geometry.Insets;
@@ -65,9 +65,12 @@ public class MileageCalculatorNoConversionRadio extends Application {
         mainPane.setHgap(txtWidth/2.0);
         mainPane.setVgap(txtWidth/12.0);
         
+        tgConv.getToggles().addAll(rbMPG, rbKPL);
+        
         // add items to mainPane
         mainPane.add(lblEffType, 0, 0);
-
+        mainPane.add(rbMPG, 0, 1);
+        mainPane.add(rbKPL, 1, 1);
         mainPane.add(lblDistance, 0, 2);
         mainPane.add(tfDistance, 1, 2);
         mainPane.add(lblCapacity, 0, 3);
@@ -81,6 +84,9 @@ public class MileageCalculatorNoConversionRadio extends Application {
         btnCalc.setOnAction(e -> calcMileage());
 
         btnReset.setOnAction(e -> resetForm());
+        
+        rbMPG.setOnAction(e -> changeLabels());
+        rbKPL.setOnAction(e -> changeLabels());
         
         // create a scene and place it in the stage
         Scene scene = new Scene(mainPane); 
